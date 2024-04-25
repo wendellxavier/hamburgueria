@@ -1,0 +1,38 @@
+{% load static %}
+<div class="row">
+    <div class="col">
+        <div class="container bg-danger rounded my-4">
+            <div class="spam text-white tetx-center display-4 fw-bold">
+                Melhores lanches da Nossa Hamburgueria
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row my-3">
+    <div class="col-md-10 offset-1">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            {% for produto in produtos %}
+                <div class="col">
+                    <div class="card bg-warning p-5">
+                        <a href="{% url 'produtos' produto.id %}">
+                            {% if produto.imagem %}
+                                <img src="{{ produto.imagem.url}}" class="card-img-top" alt="x-salada">
+                                    {% else %}
+                                        <img src="{% static 'images/burguer/img/novo_lanche.png' %}" class="card-img-top" alt="Imagem padrão">
+                            {% endif %}
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title text-danger">{{produto.nome}}</h5>
+                            <p class="card-text">{{produto.descricao}}</p>
+                        </div>
+                        <div class="span display-4 text-end mex-3 text-danger">R${{produto.preco}}</div>
+                    </div>
+                </div>
+            {% endfor %}
+             
+             
+                    
+        </div>
+    </div>
+</div>

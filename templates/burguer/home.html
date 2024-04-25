@@ -1,0 +1,16 @@
+{% extends 'burguer/base.html'%}
+
+{% block 'title' %} Página Inicial {% endblock %}
+
+
+{% block 'navbar'%}
+    {% include  'fragments/navbar.html' %}
+{% endblock %}
+
+{% block 'banner' %}
+    {% include 'fragments/banner.html'%}
+{% endblock%}
+
+{% block 'main' %}
+    {% include 'fragments/conteudo.html'%}
+{% endblock %}

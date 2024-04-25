@@ -1,0 +1,17 @@
+{% extends 'burguer/base.html'%}
+{% load static %}
+
+{% block 'title'%}Produtos{% endblock %}
+
+{% block 'navbar'%}
+    {% include 'fragments/navbar.html'%}
+{% endblock %}
+{% block 'main' %}
+    <col-md-6 class="col-md-6 offset-3 d-flex flex-column justify-content-center align-items-center vh-100">
+    <h1 class="text-info text-center md-5">{{ produto.nome }}</h1>
+    <img src="{% static 'burguer/novo_xsalada.png'%}" class="card-img-top" alt="x-salada" style="height: 350px;width:350px">
+    <h4 class="text-warning text-center">{{produto.descricao}}</h4>
+    <div class="span display-4 text-info">R${{produto.preco}}</div>
+    </col-md-6>
+
+{% endblock %}
